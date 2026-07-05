@@ -27,3 +27,4 @@ const nextConfig: NextConfig = {
 const pwa = withPWA(nextConfig);
 
 export default pwa;
+
