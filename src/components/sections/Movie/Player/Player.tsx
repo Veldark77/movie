@@ -31,9 +31,10 @@ const MoviePlayer: React.FC<MoviePlayerProps> = ({ movie, startAt }) => {
   const idle = useIdle(3000);
   const { mobile } = useBreakpoints();
   const [opened, handlers] = useDisclosure(false);
+  const defaultSource = players.findIndex((player) => player.title === "Peachify");
   const [selectedSource, setSelectedSource] = useQueryState<number>(
     "src",
-    parseAsInteger.withDefault(0),
+    parseAsInteger.withDefault(defaultSource >= 0 ? defaultSource : 0),
   );
 
   usePlayerEvents({ saveHistory: true });

@@ -45,9 +45,10 @@ const TvShowPlayer: React.FC<TvShowPlayerProps> = ({
   const idle = useIdle(3000);
   const [sourceOpened, sourceHandlers] = useDisclosure(false);
   const [episodeOpened, episodeHandlers] = useDisclosure(false);
+  const defaultSource = players.findIndex((player) => player.title === "Peachify");
   const [selectedSource, setSelectedSource] = useQueryState<number>(
     "src",
-    parseAsInteger.withDefault(0),
+    parseAsInteger.withDefault(defaultSource >= 0 ? defaultSource : 0),
   );
 
   usePlayerEvents({

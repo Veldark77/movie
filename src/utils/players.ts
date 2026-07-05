@@ -102,6 +102,14 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       ads: true,
     },
     {
+      title: "Peachify",
+      source: `https://peachify.top/embed/movie/${id}?startAt=${startAt || ""}`,
+      recommended: false,
+      fast: true,
+      ads: false,
+      resumable: true,
+    },
+    {
       title: "MoviesAPI",
       source: `https://moviesapi.club/movie/${id}`,
       ads: true,
@@ -216,6 +224,14 @@ export const getTvShowPlayers = (
       recommended: true,
       fast: true,
       ads: true,
+    },
+    {
+      title: "Peachify",
+      source: `https://peachify.top/embed/tv/${id}/${season}/${episode}?startAt=${startAt || ""}`,
+      recommended: false,
+      fast: true,
+      ads: false,
+      resumable: true,
     },
     {
       title: "MoviesAPI",
